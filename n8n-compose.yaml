@@ -1,9 +1,3 @@
-secrets:
-  cloudflare-token:
-    file: "./secrets/cloudflare-token.secret"
-  cloudflare-email:
-    file: "./secrets/cloudflare-email.secret"
-
 services:
   traefik:
     image: "traefik"
@@ -35,8 +29,8 @@ services:
       - "cloudflare-token"
       - "cloudflare-email"
     environment:
-      CLOUDFLARE_DNS_API_TOKEN_FILE: /run/secrets/cloudflare-token
-      CLOUDFLARE_EMAIL_FILE: /run/secrets/cloudflare-email
+      CLOUDFLARE_DNS_API_TOKEN: ${CLOUDFLARE_DNS_API_TOKEN}
+      CLOUDFLARE_EMAIL: ${CLOUDFLARE_EMAIL}
     env_file:
       - .env
     volumes:
