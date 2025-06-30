@@ -1,6 +1,6 @@
 #!/bin/sh
 
-REGION_NAME="ap-southeast-1"
+REGION_NAME="{{YOUR_REGION_NAME}}"
 CERTIFICATE_NAME="$REGION_NAME-bundle.pem"
 OUTPUT_DIR="opt/custom-certificates"
 
